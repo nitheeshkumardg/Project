@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link,Outlet } from 'react-router-dom'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import IconButton from '@mui/material/IconButton';
+import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 
 function Navbar1() {
   return (
@@ -17,18 +20,37 @@ function Navbar1() {
       </form>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" href="#">Download App</Link>
+        <div className="dropdown">
+            <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }} href="#"  id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            Download App
+               </Link>
+
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+               <li><Link className="dropdown-item" href="https://play.google.com/store/apps/details?id=com.meesho.supply" >For Android</Link></li>
+                <li><Link className="dropdown-item" href="https://apps.apple.com/in/app/meesho/id1457958492">For IOS</Link></li>
+                </ul>
+               </div>
+
+
+          
         </li>
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" href="#">Become a Supplier</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" href="#">News Room</Link>
+          <Link className="nav-link active" aria-current="page" to="https://www.meesho.io/news">News Room</Link>
         </li>
         <li className="nav-item">
+        <IconButton color="primary" aria-label="add to shopping cart">
+            <Person2OutlinedIcon />
+          </IconButton>
+     
           <Link className="nav-link active" aria-current="page" to="/Login">Profile</Link>
         </li>
         <li className="nav-item">
+        <IconButton color="primary" aria-label="add to shopping cart">
+            <AddShoppingCartIcon />
+          </IconButton>
           <Link className="nav-link active" aria-current="page" href="#">Cart</Link>
         </li>
      

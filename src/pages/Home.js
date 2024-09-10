@@ -6,7 +6,18 @@ import Carousal from '../components/Carousal'
 
 import {useEffect,useState} from 'react';
 import Ads from '../components/Ads'
-import Login from '../components/Login'
+
+import Products from '../components/Products'
+
+
+
+
+
+const product = {
+  name: 'Stylish Kurti',
+  image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+};
+
 
 
 
@@ -14,7 +25,7 @@ function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products') 
+    fetch('Productsitem.json') 
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.error('Error fetching data:', error));
@@ -28,11 +39,11 @@ function Home() {
 
   return (
     <div >
-      <div>
+    
       <Navbar1/>
-      {/* <Login/> */}
+      
 
-      </div>
+    
      
         
       
@@ -40,7 +51,7 @@ function Home() {
       <Navbar2/>
       <Carousal/>
 
-      <div>
+   
     
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
     <div className='row'>
@@ -57,11 +68,16 @@ function Home() {
         />
       ))}
   
-    </div>
+    
  
   </div>
   </div>
     
+  {/* <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <Products data={data} />
+    </div> */}
+
+
 
 
 

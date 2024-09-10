@@ -14,6 +14,11 @@ import Ads from './components/Ads';
 import Login from './components/Login';
 
 import Home from './pages/Home';
+import Products from './components/Products';
+
+
+
+
 
 
 
@@ -39,10 +44,15 @@ function App() {
       <Route path= '/BagsandFootwear' element={<BagsandFootwear/>}/>
       <Route path= '/Electronics' element={<Electronics/>}/>
       <Route path= '/Login' element={<Login/>}/>
+      <Route path="/Products/:productId" element={Products} />
+      
       <Route path='/' element={<Home/>}/>
       </Route>
     </Routes>
     </BrowserRouter>
+
+   
+    
 
 
 
