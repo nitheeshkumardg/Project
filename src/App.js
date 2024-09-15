@@ -9,12 +9,15 @@ import BeautyandHealth from './pages/BeautyandHealth';
 import JewelleryandAccessories from './pages/JewelleryandAccessories';
 import BagsandFootwear from './pages/BagsandFootwear';
 import Electronics from './pages/Electronics';
-import Ads from './components/Ads';
+
 
 import Login from './components/Login';
 
 import Home from './pages/Home';
-import Products from './components/Products';
+
+import  Details  from './pages/Details';
+import CartDetails from './pages/cartedItems';
+
 
 
 
@@ -34,6 +37,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/'>
+      <Route path='/' element={<Home/>}/>
       <Route path= '/WomenEthnic' element={<WomenEthnic/>}/>
       <Route path= '/WomenWestern' element={<WomenWestern/>}/>
       <Route path= '/Men' element={<Men/>}/>
@@ -44,9 +48,12 @@ function App() {
       <Route path= '/BagsandFootwear' element={<BagsandFootwear/>}/>
       <Route path= '/Electronics' element={<Electronics/>}/>
       <Route path= '/Login' element={<Login/>}/>
-      <Route path="/Products/:productId" element={Products} />
       
-      <Route path='/' element={<Home/>}/>
+      <Route path="/details/" element={<Details/>} />
+      <Route path="/cart" element={<CartDetails/>} />
+      
+      
+      
       </Route>
     </Routes>
     </BrowserRouter>

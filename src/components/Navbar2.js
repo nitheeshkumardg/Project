@@ -1,116 +1,137 @@
 import React from 'react'
 import { Link,Outlet } from 'react-router-dom'
+import './Navbar.css'
+
 
 function Navbar2() {
   return (
     <div>
         <>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <div className="container-fluid">
-    
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <div className="dropdown">
-  <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }}  href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  Women Ethnic </Link>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><Link className="dropdown-item" href="#">Sarees</Link></li>
-    <li><Link className="dropdown-item" href="#">Kurtis</Link></li>
-    <li><Link className="dropdown-item" href="#">Kurta Sets</Link></li>
-    <li><Link className="dropdown-item" href="#">Suits & Dress Material</Link></li>
-    <li><Link className="dropdown-item" href="#">Other Ethnic</Link></li>
-  </ul>
-</div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <button 
+          className="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-wrap">
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown" to="#" id="dropdownMenuLink1" role="button" aria-expanded="false">
+                Women Ethnic
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                <li><Link className="dropdown-item" to="#">Sarees</Link></li>
+                <li><Link className="dropdown-item" to="#">Kurtis</Link></li>
+                <li><Link className="dropdown-item" to="#">Kurta Sets</Link></li>
+                <li><Link className="dropdown-item" to="#">Suits & Dress Material</Link></li>
+                <li><Link className="dropdown-item" to="#">Other Ethnic</Link></li>
+              </ul>
+            </li>
 
-  <div className="dropdown">
-  <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }}  href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  Women Western</Link>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><Link className="dropdown-item" href="#">Topwear</Link></li>
-    <li><Link className="dropdown-item" href="#">Bottomwear</Link></li>
-    <li><Link className="dropdown-item" href="#">Innerwear</Link></li>
-    <li><Link className="dropdown-item" href="#">Sleepwear</Link></li>
-  </ul>
-</div>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown" to="#" id="dropdownMenuLink2" role="button" aria-expanded="false">
+                Women Western
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                <li><Link className="dropdown-item" to="#">Topwear</Link></li>
+                <li><Link className="dropdown-item" to="#">Bottomwear</Link></li>
+                <li><Link className="dropdown-item" to="#">Innerwear</Link></li>
+                <li><Link className="dropdown-item" to="#">Sleepwear</Link></li>
+              </ul>
+            </li>
 
-<div className="dropdown">
-  <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  Men</Link>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><Link className="dropdown-item" href="#">Topwear</Link></li>
-    <li><Link className="dropdown-item" href="#">Bottomwear</Link></li>
-    <li><Link className="dropdown-item" href="#">Men Accessories</Link></li>
-    <li><Link className="dropdown-item" href="#">Men Footwear </Link></li>
-    <li><Link className="dropdown-item" href="#">Ethnic Wear </Link></li>
-    <li><Link className="dropdown-item" href="#">Inner & Sleep Wear </Link></li>
-  </ul>
-</div>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown" to="#" id="dropdownMenuLink3" role="button" aria-expanded="false">
+                Men
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                <li><Link className="dropdown-item" to="#">Topwear</Link></li>
+                <li><Link className="dropdown-item" to="#">Bottomwear</Link></li>
+                <li><Link className="dropdown-item" to="#">Men Accessories</Link></li>
+                <li><Link className="dropdown-item" to="#">Men Footwear</Link></li>
+                <li><Link className="dropdown-item" to="#">Ethnic Wear</Link></li>
+                <li><Link className="dropdown-item" to="#">Inner & Sleep Wear</Link></li>
+              </ul>
+            </li>
 
-<div className="dropdown">
-  <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  Kids</Link>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><Link className="dropdown-item" href="#">Boys & Girls 2+ Years</Link></li>
-    <li><Link className="dropdown-item" href="#">Infant 0-2 Years</Link></li>
-    <li><Link className="dropdown-item" href="#">Toys & Accessories</Link></li>
-    <li><Link className="dropdown-item" href="#">Baby Care </Link></li>
-  </ul>
-</div>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown" to="#" id="dropdownMenuLink4" role="button" aria-expanded="false">
+                Kids
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink4">
+                <li><Link className="dropdown-item" to="#">Boys & Girls 2+ Years</Link></li>
+                <li><Link className="dropdown-item" to="#">Infant 0-2 Years</Link></li>
+                <li><Link className="dropdown-item" to="#">Toys & Accessories</Link></li>
+                <li><Link className="dropdown-item" to="#">Baby Care</Link></li>
+              </ul>
+            </li>
 
-<div className="dropdown">
-  <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  Home & Kitchen</Link>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><Link className="dropdown-item" href="#">Home Furnishing</Link></li>
-    <li><Link className="dropdown-item" href="#">Home Decor</Link></li>
-    <li><Link className="dropdown-item" href="#">Kitchen & Dining</Link></li>
-  </ul>
-</div>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown" to="#" id="dropdownMenuLink5" role="button" aria-expanded="false">
+                Home & Kitchen
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink5">
+                <li><Link className="dropdown-item" to="#">Home Furnishing</Link></li>
+                <li><Link className="dropdown-item" to="#">Home Decor</Link></li>
+                <li><Link className="dropdown-item" to="#">Kitchen & Dining</Link></li>
+              </ul>
+            </li>
 
-<div className="dropdown">
-  <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  Beauty & Health</Link>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><Link className="dropdown-item" href="#">Make up</Link></li>
-    <li><Link className="dropdown-item" href="#">Wellness</Link></li>
-    <li><Link className="dropdown-item" href="#">Skincare</Link></li>
-  </ul>
-</div>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown" to="#" id="dropdownMenuLink6" role="button" aria-expanded="false">
+                Beauty & Health
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink6">
+                <li><Link className="dropdown-item" to="#">Makeup</Link></li>
+                <li><Link className="dropdown-item" to="#">Wellness</Link></li>
+                <li><Link className="dropdown-item" to="#">Skincare</Link></li>
+              </ul>
+            </li>
 
-<div className="dropdown">
-  <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  Jewellery & Accessories</Link>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><Link className="dropdown-item" href="#">Jewellery</Link></li>
-    <li><Link className="dropdown-item" href="#">Women Accessory</Link></li>
-  </ul>
-</div>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown" to="#" id="dropdownMenuLink7" role="button" aria-expanded="false">
+                Jewellery & Accessories
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink7">
+                <li><Link className="dropdown-item" to="#">Jewellery</Link></li>
+                <li><Link className="dropdown-item" to="#">Women Accessories</Link></li>
+              </ul>
+            </li>
 
-<div className="dropdown">
-  <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  Bags & Footwear</Link>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><Link className="dropdown-item" href="#">Women Bags</Link></li>
-    <li><Link className="dropdown-item" href="#">Men Bags</Link></li>
-    <li><Link className="dropdown-item" href="#">Men Footwear</Link></li>
-    <li><Link className="dropdown-item" href="#">Women Footwear</Link></li>
-  </ul>
-</div>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown" to="#" id="dropdownMenuLink8" role="button" aria-expanded="false">
+                Bags & Footwear
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink8">
+                <li><Link className="dropdown-item" to="#">Women Bags</Link></li>
+                <li><Link className="dropdown-item" to="#">Men Bags</Link></li>
+                <li><Link className="dropdown-item" to="#">Men Footwear</Link></li>
+                <li><Link className="dropdown-item" to="#">Women Footwear</Link></li>
+              </ul>
+            </li>
 
-<div className="dropdown">
-  <Link className="bg-white px-4 py-2 rounded border border-gray-300 hover:bg-gray-200" style={{ color: 'black', textDecoration: 'none' }} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-  Electronics</Link>
-    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><Link className="dropdown-item" href="#">Mobile & Accessories</Link></li>
-    <li><Link className="dropdown-item" href="#">Appliances</Link></li>
-  </ul>
-</div>
- </ul>
-  </div>
-  </div>
-  <Outlet/>
-</nav>
+            <li className="nav-item dropdown">
+              <Link className="nav-link dropdown" to="#" id="dropdownMenuLink9" role="button" aria-expanded="false">
+                Electronics
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink9">
+                <li><Link className="dropdown-item" to="#">Mobile & Accessories</Link></li>
+                <li><Link className="dropdown-item" to="#">Appliances</Link></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <Outlet/>
+    </nav>
+
 </>
     </div>
   )
