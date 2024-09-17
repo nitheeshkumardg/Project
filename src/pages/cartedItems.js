@@ -53,7 +53,7 @@ console.log('Grand Total:', grandTotal);
                                                     <p className='text-end'>{item.quantity}</p>
                                                 </div>
                                                 <div className='col-md-1'>
-                                                    <p className='text-end'>{item.total_item_price.toFixed(2)}</p>
+                                                    {/* <p className='text-end'>{item.total_item_price.toFixed(2)}</p> */}
                                                 </div>
                                         </div>
                                     ))}
@@ -85,7 +85,7 @@ console.log('Grand Total:', grandTotal);
                                 <div className='d-flex justify-content-between px-2'>
                                 <p> Total </p> <p>  {grandTotal.toFixed(2)}</p>
                                 </div>
-                                <Link className='float-end btn btn-success' to='/payment'> Proceed to Checkout</Link>
+                                <Link className='float-end btn btn-success' to='/payment'> Proceed to Payment</Link>
                             </div>
                         </div>
                     </div>

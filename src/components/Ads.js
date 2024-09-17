@@ -1,69 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import Buynow from './Buynow';
 
-
-
-
-
-function Ads  ({ id, image, title, description, price, rating, freeDelivery,product}) {
- console.log(product);
- 
+function Ads({ id, image, title, price, rating, freeDelivery }) {
   return (
-
-   <>
-<div className="row1 row">
-        <div className="col1 col">
-          
-        </div>
-
-        <div className="col2 col flex flex-wrap gap-4">
-          <div className="card p-2 m-2 border-4 row2 row" style={{ width: '18rem' }}> 
-            <div className="card"> 
-              <img 
-                src={product.image} 
-                className="card-img-top w-48 h-48 object-cover rounded-lg border border-gray-300" 
-                alt="image"  
-                height={'250px'} 
-                width={'250px'} 
-              />
-              <div className="card-body">
-                <h5 className="card-title">{product.title}</h5> 
-                {/* <p className="card-text">{description}</p> */}
-                <h5 className="price">₹{product.price} onwards</h5>
-                {!freeDelivery && (
-                  <div className="text-green-500 font-bold">Free Delivery</div>
-                )}
-                {/* <Link onClick={handleCurrentProduct} to = {{pathname:'/details/'}} className="btn btn-primary">Buy Now</Link>
-                  */}
-                  <Buynow product={product} />
-
-                {/* <Link href="#" className="btn btn-primary">{rating.rate} ★</Link>  */}
-                {/* <h5 className="rating">{rating.count} Reviews</h5> */}
-              </div>
-            </div>
+    <div className="card p-4 m-2 shadow-lg rounded-lg" key={id}>
+      <img
+        src={image}
+        className="w-full h-48 object-cover rounded-t-lg"
+        alt={title}
+      />
+      <div className="card-body">
+        <h5 className="card-title text-xl font-bold mb-2">{title}</h5>
+        <h5 className="price text-lg">₹{price} onwards</h5>
+        {rating && (
+          <div className="rating text-yellow-500 font-bold">
+            Rating: {rating.rate} ({rating.count} reviews)
           </div>
-        </div>
+        )}
+        {freeDelivery && (
+          <div className="text-green-500 font-bold">Free Delivery</div>
+        )}
+        <Buynow product={{ id, image, title, price }} />
       </div>
-    </>
-             
-  )
-
+    </div>
+  );
 }
 
+export default Ads;
 
 
-  
-
-     
-
-
-
-                    
-                 
-              
-  export default Ads;
     
     
     

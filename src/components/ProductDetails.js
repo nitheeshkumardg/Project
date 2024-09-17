@@ -5,9 +5,9 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { useDispatch } from 'react-redux';
-import addtoCart from '../actions/cartActions'
-import productData from '../assests/Productsitem';
+
+
+
 import Productsection from './Productsection';
 
 

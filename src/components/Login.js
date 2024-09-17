@@ -63,7 +63,7 @@ function Login() {
 
 
 
-          <div className='btn btn-primary ' style={{display: "flex", justifyContent: "center", alignItems: "center",width:200, marginLeft:550}}>
+          <div className='btn btn-primary ' style={{display: "flex", justifyContent: "center", alignItems: "center",width:200, marginLeft:50}}>
             Continue
             </div> 
 
