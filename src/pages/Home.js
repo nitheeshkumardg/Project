@@ -75,9 +75,7 @@ function Home() {
    
      </div>
      <Footer/>
-     <div className="text-center text-red-500">
-  Tailwind CSS is working!
-</div>
+    
      </>
   )
 }

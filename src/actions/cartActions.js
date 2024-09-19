@@ -2,6 +2,8 @@
 export const addtoCart=(item)=>({
     type:'ADD_TO_CART',
     payload:item
+    
+    
 });
 
 const removefromCart=(item)=>({

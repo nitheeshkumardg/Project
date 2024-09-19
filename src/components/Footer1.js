@@ -1,5 +1,6 @@
 import React from "react";
-import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material";
+import { Facebook, Instagram, LinkedIn } from "@mui/icons-material";
+import XIcon from '@mui/icons-material/X';
 import { IconButton } from "@mui/material";
 
 const Footer = () => {
@@ -78,14 +79,14 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a href="https://play.google.com/store/apps" target="_blank" rel="noreferrer">
                 <img
-                  src="/images/google-play.png"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb5LOPUgzjbz_m4aVulC-GU5zu-30HBdYnAg&s"
                   alt="Google Play Store"
                   className="w-32"
                 />
               </a>
               <a href="https://www.apple.com/app-store/" target="_blank" rel="noreferrer">
                 <img
-                  src="/images/apple-store.png"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRADkLw38AGNO3KB-MrTfa1YjaXddi7J-eN7Q&s"
                   alt="Apple App Store"
                   className="w-32"
                 />
@@ -124,7 +125,7 @@ const Footer = () => {
                 rel="noreferrer"
                 aria-label="Twitter"
               >
-                <Twitter style={{ fontSize: 30, color: '#1DA1F2' }} />
+                <XIcon style={{ fontSize: 30, color: '#1DA1F2' }} />
               </IconButton>
 
               <IconButton
@@ -142,7 +143,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="text-center text-gray-600 text-sm mt-6">
-          <p>© 2024 Your Company. All Rights Reserved.</p>
+          <p>© 2024 Meesho Company. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

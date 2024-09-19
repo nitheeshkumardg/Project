@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from '@mui/material/IconButton';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import MenuIcon from '@mui/icons-material/Menu'; // Import the Menu icon
 import { useSelector } from 'react-redux';
 
 function Navbar1() {
   const cartCounter = useSelector((state) => state.cart.cartCounter);
+
+  // State for managing the mobile menu toggle
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
@@ -25,17 +29,18 @@ function Navbar1() {
           <button
             className="block lg:hidden text-gray-700 focus:outline-none"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
+            onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle the menu on click
             aria-label="Toggle navigation"
           >
-            <span className="material-icons">menu</span>
+            <MenuIcon /> {/* The three-line (hamburger) icon */}
           </button>
 
           {/* Collapsible Navbar Content */}
-          <div className="hidden lg:flex justify-between w-full" id="navbarNav">
+          <div
+            className={`${
+              isMenuOpen ? 'block' : 'hidden'
+            } lg:flex justify-between items-center space-x-6 w-full`}
+          >
             {/* Search Bar */}
             <form className="flex-grow mx-4">
               <input
@@ -47,11 +52,11 @@ function Navbar1() {
             </form>
 
             {/* Navigation Links */}
-            <ul className="flex items-center space-x-6">
+            <ul className="flex flex-col lg:flex-row items-center lg:space-x-6 z-50">
               {/* Download App Dropdown */}
               <li className="relative group">
                 <button className="text-black">Download App</button>
-                <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2">
+                <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 space-y-2">
                   <li>
                     <Link
                       className="block px-4 py-2 hover:bg-gray-200"
@@ -89,13 +94,30 @@ function Navbar1() {
               </li>
 
               {/* Profile */}
-              <li className="flex items-center">
-                <IconButton color="primary">
-                  <Person2OutlinedIcon />
-                </IconButton>
-                <Link className="ml-1 text-black hover:text-gray-600" to="/Login">
-                  Profile
-                </Link>
+             
+             <li className="relative group">
+             <IconButton color="primary">
+                       <Person2OutlinedIcon />
+                    </IconButton>
+                <button className="text-black">Profile</button>
+                <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 space-y-2">
+                  <li>
+                    <Link
+                      className="block px-4 py-2 hover:bg-gray-200"
+                      to="/Login"
+                    >
+                     Customer
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="block px-4 py-2 hover:bg-gray-200"
+                      to="/Vendor"
+                    >
+                     Seller
+                    </Link>
+                  </li>
+                </ul>
               </li>
 
               {/* Cart */}
@@ -117,6 +139,8 @@ function Navbar1() {
 }
 
 export default Navbar1;
+
+
 
 
 

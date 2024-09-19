@@ -5,7 +5,7 @@ import { Link, Outlet } from 'react-router-dom';
 function Navbar2() {
   return (
     <div>
-      <nav className="bg-white shadow-md z-50 relative">
+      <nav className="bg-white shadow-md  relative">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             {/* Mobile Menu Toggle */}

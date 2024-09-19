@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import Ads from './Ads';
 import Productdisplay from './Productdisplay';
+import Footer from '../components/Footer1'
 
 function Productsection(product) {
   const dispatch=useDispatch()
@@ -58,7 +59,7 @@ const handleCart=()=>{
 <div>
   <Productdisplay product={product}/>
 </div>
-
+<Footer/>
 
       </>
   )

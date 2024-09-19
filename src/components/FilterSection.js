@@ -6,7 +6,7 @@ function Filtersection({ product }) {
   const [sortBy, setSortBy] = useState('relevance');
   const [selectedCategories, setSelectedCategories] = useState([]);
 
-  const categories = ['Women', 'Men', 'Kids', 'Electronics', 'Beauty'];
+  const categories = ["women's clothing", "men's clothing", 'Kids', 'Electronics', 'Beauty Product',"jewelery","Equipments", "Home Decoration"];
 
   // Filter categories based on search term
   const filteredCategories = categories.filter((category) =>

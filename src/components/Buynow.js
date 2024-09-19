@@ -8,7 +8,7 @@ function Buynow({product}) {
     let handleCurrentProduct=()=>{
         dispatch(setCurrentProduct(product))
      }
-     console.log('=============++++:',product);
+  
       
   return (
     <div>
