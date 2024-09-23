@@ -1,5 +1,5 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import { userReducer } from "./userReducer";
+import userReducer from "./userReducer";
 import wishlistReducer from "./wishlistReducer"
 import cartReducer from "./cartReducer"
 import currentProductReducer from "./currentProductReducer"

@@ -6,7 +6,10 @@ import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import MenuIcon from '@mui/icons-material/Menu'; // Import the Menu icon
 import { useSelector } from 'react-redux';
 
+
+
 function Navbar1() {
+
   const cartCounter = useSelector((state) => state.cart.cartCounter);
 
   // State for managing the mobile menu toggle

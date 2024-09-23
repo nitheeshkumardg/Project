@@ -12,11 +12,13 @@ import Electronics from './pages/Electronics';
 
 
 import Login from './components/Login';
+import ProductForm from './components/ProductForm';
 
 import Home from './pages/Home';
 
 import  Details  from './pages/Details';
 import CartDetails from './pages/cartedItems';
+import Register from './components/Register';
 
 
 
@@ -48,7 +50,8 @@ function App() {
       <Route path= '/BagsandFootwear' element={<BagsandFootwear/>}/>
       <Route path= '/Electronics' element={<Electronics/>}/>
       <Route path= '/Login' element={<Login/>}/>
-      
+      <Route path= '/Vendor' element={<ProductForm/>}/>
+      <Route path= '/register' element={<Register/>}/>
       <Route path="/details/" element={<Details/>} />
       <Route path="/cart" element={<CartDetails/>} />
       

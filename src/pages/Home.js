@@ -29,7 +29,7 @@ function Home() {
   const [product, setProduct] = useState([]);
 
   // useEffect(() => {
-  //   fetch('../assests/Productsitem') 
+  //   fetch('http://localhost:27017/Meesho.products') 
   //     .then((response) => response.json())
   //     .then((data) => setProduct(data))
   //     .catch((error) => console.error('Error fetching data:', error));
