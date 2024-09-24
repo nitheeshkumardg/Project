@@ -3,7 +3,7 @@ import axios from "axios";
 import Navbar1 from "./Navbar1";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const SellerRegister = () => {
   const [formData, setFormData] = useState({
     email: "",
     name: "",
@@ -28,7 +28,7 @@ const Register = () => {
     setError("");
     try {
       const res = await axios.post(
-        "http://localhost:7777/api/auth/register",
+        "http://localhost:7777/api/seller/sellerregister",
         formData,
         {
           headers: {
@@ -44,7 +44,7 @@ const Register = () => {
         password: "",
         userType: "customer",
       });
-      navigate("/login");
+      navigate("/sellerLogin");
     } catch (err) {
       setError(err?.response?.data);
       console.log(err?.response?.data);
@@ -63,7 +63,7 @@ const Register = () => {
         <div className="col-md-6 mt-5 ">
           <div className="card mt-5 ">
             <div className="card-header">
-              <h2 className="text-center">Register</h2>
+              <h2 className="text-center">Seller Dashboard</h2>
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
@@ -80,7 +80,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                  <label>Name:</label>
+                  <label>Seller Name:</label>
                   <input
                     type="text"
                     name="name"
@@ -102,23 +102,6 @@ const Register = () => {
                     required
                   />
                 </div>
-
-                {/* <div className="form-group mb-3">
-                  <label>User Type:</label>
-                  <select
-                    name="userType"
-                    className="form-control"
-                    value={formData.userType}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="customer">Customer</option>
-                    <option value="staff">Staff</option>
-                    <option value="admin">Admin</option>
-                    <option value="vendor">Vendor</option>
-                    <option value="delivery_partner">Delivery Partner</option>
-                  </select>
-                </div> */}
 
                 <button
                   type="submit"
@@ -147,4 +130,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SellerRegister;

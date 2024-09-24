@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import axios from "axios";
-import Navbar1 from "./Navbar1";
-import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout } from "../reducers/userReducer";
+import Navbar1 from "./Navbar1";
+import Footer from "./Footer1";
+import { Link } from 'react-router-dom';
+
+
+const Sellerlogin = () => {
+  //user Login infomation
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
-    name: "",
     password: "",
-    userType: "customer", // default value
   });
 
   const [message, setMessage] = useState("");
@@ -28,7 +34,7 @@ const Register = () => {
     setError("");
     try {
       const res = await axios.post(
-        "http://localhost:7777/api/auth/register",
+       "http://localhost:7777/api/seller//sellerLogin",
         formData,
         {
           headers: {
@@ -36,18 +42,21 @@ const Register = () => {
           },
         }
       );
-      setMessage(res.data.message || "Registration successful!");
-      // Optionally, reset form
-      setFormData({
-        email: "",
-        name: "",
-        password: "",
-        userType: "customer",
-      });
-      navigate("/login");
+      navigate("/cart");
+      // console.log(res.data.user);
+
+      dispatch(login(res.data.user));
+
+      setMessage("Login successful!");
+
+      if (res?.data?.token) {
+        // Store the token or other data
+        localStorage.setItem("token", res?.data?.token);
+      } else {
+        navigate("/Login");
+      }
     } catch (err) {
-      setError(err?.response?.data);
-      console.log(err?.response?.data);
+      setError(err.response?.data?.error || "Login failed!");
     }
   };
 
@@ -55,17 +64,23 @@ const Register = () => {
     <>
     <Navbar1/>
     <div
-      className="container "
-      style={{ background: "#fdefe7", height: "100vh" }}
+      className="container mt-5  "
+      style={{ background: "#fdefe7", height: "100vh", width: "100vw" }}
     >
-      
-      <div className="row justify-content-center ">
-        <div className="col-md-6 mt-5 ">
-          <div className="card mt-5 ">
-            <div className="card-header">
-              <h2 className="text-center">Register</h2>
-            </div>
+    
+      <div
+        className="row justify-content-center "
+        style={{ background: "white" }}
+      >
+        <div className="col-md-6 mt-5 " style={{ background: "white" }}>
+        <div className="text-center">
+               <img src="https://images.meeshosupplyassets.com/meesho-logo-pink.svg" class="rounded" alt="Image" style={{marginLeft:240,marginBottom:40}} />
+              </div>
+          <div className="card  ">
             <div className="card-body">
+            <div className="text-center">
+               <h1 style={{ fontSize: "2rem" }}>Login to your supplier panel</h1>
+              </div>
               <form onSubmit={handleSubmit}>
                 <div className="form-group mb-3">
                   <label>Email:</label>
@@ -74,18 +89,6 @@ const Register = () => {
                     name="email"
                     className="form-control"
                     value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-
-                <div className="form-group mb-3">
-                  <label>Name:</label>
-                  <input
-                    type="text"
-                    name="name"
-                    className="form-control"
-                    value={formData.name}
                     onChange={handleChange}
                     required
                   />
@@ -103,35 +106,25 @@ const Register = () => {
                   />
                 </div>
 
-                {/* <div className="form-group mb-3">
-                  <label>User Type:</label>
-                  <select
-                    name="userType"
-                    className="form-control"
-                    value={formData.userType}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="customer">Customer</option>
-                    <option value="staff">Staff</option>
-                    <option value="admin">Admin</option>
-                    <option value="vendor">Vendor</option>
-                    <option value="delivery_partner">Delivery Partner</option>
-                  </select>
-                </div> */}
-
-                <button
+                <Link
+                  to="/Vendor"
                   type="submit"
-                  className="btn btn-primary w-100"
+                  className="btn  w-100"
                   style={{
-                    backgroundColor: "#ff3f6c",
+                    backgroundColor: "#d8b4fe",
                     color: "white",
                     fontWeight: 700,
                   }}
                 >
-                  Register
-                </button>
+                  Login
+                </Link>
               </form>
+              <p className="text-center text-gray-600 mt-4">
+                    New to Meesho?{' '}
+                <Link to="/sellerregister" className="text-blue-500 hover:underline">
+                       Sign up
+                 </Link>
+              </p>
 
               {/* Success and error messages */}
               {message && (
@@ -143,8 +136,9 @@ const Register = () => {
         </div>
       </div>
     </div>
+    <Footer/>
     </>
   );
 };
 
-export default Register;
+export default Sellerlogin;

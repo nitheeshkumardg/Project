@@ -19,7 +19,8 @@ import Home from './pages/Home';
 import  Details  from './pages/Details';
 import CartDetails from './pages/cartedItems';
 import Register from './components/Register';
-
+import SellerRegister from './components/sellerRegister';
+import Sellerlogin from './components/sellerLogin'
 
 
 
@@ -54,6 +55,8 @@ function App() {
       <Route path= '/register' element={<Register/>}/>
       <Route path="/details/" element={<Details/>} />
       <Route path="/cart" element={<CartDetails/>} />
+      <Route path="/sellerRegister" element={<SellerRegister/>} />
+      <Route path="/sellerLogin" element={<Sellerlogin/>} />
       
       
       

@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet,useNavigate } from 'react-router-dom';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from '@mui/material/IconButton';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import MenuIcon from '@mui/icons-material/Menu'; // Import the Menu icon
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { login, logout } from "../reducers/userReducer";
+
 
 
 
 function Navbar1() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { isLogin, userDetails } = useSelector((state) => state.user);
+  console.log(isLogin, userDetails);
+  function logoutHandler() {
+    dispatch(logout());
+    navigate("/Login");
+  }
 
   const cartCounter = useSelector((state) => state.cart.cartCounter);
 
@@ -112,10 +123,14 @@ function Navbar1() {
                      Customer
                     </Link>
                   </li>
+                  {isLogin && (
+                         <button className="btn" onClick={logoutHandler}>
+                            Logout
+                  </button>)}
                   <li>
                     <Link
                       className="block px-4 py-2 hover:bg-gray-200"
-                      to="/Vendor"
+                      to="/sellerLogin"
                     >
                      Seller
                     </Link>

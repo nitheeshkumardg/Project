@@ -8,16 +8,33 @@ import Swal from 'sweetalert2'
 import Ads from './Ads';
 import Productdisplay from './Productdisplay';
 import Footer from '../components/Footer1'
+import { useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+
 
 function Productsection(product) {
   const dispatch=useDispatch()
+  
+  const navigate = useNavigate();
+  const { isLogin, userDetails } = useSelector((state) => state.user);
 const handleCart=()=>{
-    dispatch(addtoCart(product))
+  if (!isLogin) {
+    // Redirect to login page if not logged in
+    Swal.fire({
+      title: "Please Login",
+      text: "You need to be logged in to add items to the cart!",
+      icon: "warning"
+    });
+    navigate("/Login"); // Redirect to login page
+  } else {
+    // Add to cart if user is logged in
+    dispatch(addtoCart(product));
     Swal.fire({
       title: "Congratulation!",
       text: "One Item Added To Cart!",
       icon: "success"
     });
+  }
     
 }
 
