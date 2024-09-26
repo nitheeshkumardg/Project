@@ -4,6 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 const ProductForm = () => {
   const [product, setProduct] = useState({
@@ -40,6 +41,7 @@ const ProductForm = () => {
           "Content-Type": "multipart/form-data",
         },
       });
+      
       toast.success("Product added successfully!", {
         position: "top-center",
         theme: "colored",
@@ -53,18 +55,20 @@ const ProductForm = () => {
         stock:"",
         imageUrl: null,
       });
-      navigate("/");
+      navigate("/Vendor/products");
     } catch (error) {
       toast.error(`Error adding product: ${error.message}`, {
         position: "top-center",
       });
     }
   };
+ 
 
   return (
     <div className="container mt-5">
       <ToastContainer />
       <h2 className="text-center mb-4">Add Product</h2>
+     
       <form onSubmit={handleSubmit} className="col-md-8 mx-auto">
         <div className="form-group">
           <label htmlFor="title">Title</label>
@@ -143,6 +147,7 @@ const ProductForm = () => {
           />
         </div>
         <button
+        
           type="submit"
           className="btn btn-block btn-ping"
           style={{
@@ -151,7 +156,7 @@ const ProductForm = () => {
             fontWeight: 700,
           }}
         >
-          Submit
+          Add Product
         </button>
       </form>
     </div>

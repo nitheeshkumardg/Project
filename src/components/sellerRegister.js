@@ -107,7 +107,7 @@ const SellerRegister = () => {
                   type="submit"
                   className="btn btn-primary w-100"
                   style={{
-                    backgroundColor: "#ff3f6c",
+                    backgroundColor: "#d8b4fe",
                     color: "white",
                     fontWeight: 700,
                   }}

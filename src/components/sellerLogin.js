@@ -42,7 +42,7 @@ const Sellerlogin = () => {
           },
         }
       );
-      navigate("/cart");
+      navigate("/Vendor/products");
       // console.log(res.data.user);
 
       dispatch(login(res.data.user));
@@ -106,7 +106,7 @@ const Sellerlogin = () => {
                   />
                 </div>
 
-                <Link
+                <button
                   to="/Vendor"
                   type="submit"
                   className="btn  w-100"
@@ -117,7 +117,7 @@ const Sellerlogin = () => {
                   }}
                 >
                   Login
-                </Link>
+                </button>
               </form>
               <p className="text-center text-gray-600 mt-4">
                     New to Meesho?{' '}
