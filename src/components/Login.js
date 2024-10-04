@@ -85,6 +85,7 @@ import { login, logout } from "../reducers/userReducer";
 import Navbar1 from "./Navbar1";
 import Footer from "./Footer1";
 import { Link } from 'react-router-dom';
+import { fetchCartItems } from "../reducers/cartReducer";
 
 
 const Login = () => {
@@ -120,10 +121,11 @@ const Login = () => {
           },
         }
       );
-      navigate("/cart");
+      navigate("/");
       // console.log(res.data.user);
 
       dispatch(login(res.data.user));
+      dispatch(fetchCartItems());
 
       setMessage("Login successful!");
 

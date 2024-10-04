@@ -28,19 +28,19 @@ import Filtersection from '../components/FilterSection'
 function Home() {
   const [product, setProduct] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:27017/Meesho.products') 
-  //     .then((response) => response.json())
-  //     .then((data) => setProduct(data))
-  //     .catch((error) => console.error('Error fetching data:', error));
-  // }, []);
-
-
   useEffect(() => {
+    fetch('http://localhost:7777/api/products/products') 
+      .then((response) => response.json())
+      .then((data) => setProduct(data))
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
+
+  // useEffect(() => {
   
     
-    setProduct(productData);
-  }, []);
+  //   setProduct(productData);
+  // }, []);
 
   
   

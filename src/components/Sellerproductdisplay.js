@@ -87,7 +87,7 @@ const SellerProductDisplay = () => {
               className="border border-gray-300 p-4 rounded-lg shadow-lg bg-white"
             >
               <img
-                src={`http://localhost:7777/uploads/${product.imageUrl}`} // assuming the images are stored in /uploads
+                src={`http://localhost:7777/uploads/${product.image}`} // assuming the images are stored in /uploads
                 alt={product.title}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />

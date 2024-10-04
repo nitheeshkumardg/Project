@@ -21,3 +21,4 @@ const incrementCartCounter=()=>({
 })
 export default {addtoCart,removefromCart,incrementCartCounter,decrementCartCounter} 
  
+

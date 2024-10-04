@@ -9,33 +9,20 @@ import BeautyandHealth from './pages/BeautyandHealth';
 import JewelleryandAccessories from './pages/JewelleryandAccessories';
 import BagsandFootwear from './pages/BagsandFootwear';
 import Electronics from './pages/Electronics';
-
-
 import Login from './components/Login';
 import ProductForm from './components/ProductForm';
-
 import Home from './pages/Home';
-
 import  Details  from './pages/Details';
 import CartDetails from './pages/cartedItems';
 import Register from './components/Register';
 import SellerRegister from './components/sellerRegister';
 import Sellerlogin from './components/sellerLogin'
 import Sellerproductdisplay from './components/Sellerproductdisplay';
-
-
-
-
-
-
+import PaymentComponent from './components/payment';
 
 
 
 function App() {
-  
-
-
-
   return (
     <>
     <BrowserRouter>
@@ -59,40 +46,10 @@ function App() {
       <Route path="/sellerRegister" element={<SellerRegister/>} />
       <Route path="/sellerLogin" element={<Sellerlogin/>} />
       <Route path="/Vendor/products" element={<Sellerproductdisplay/>} />
-      
-      
-      
+      <Route path= '/payment' element={<PaymentComponent/>}/>
       </Route>
     </Routes>
     </BrowserRouter>
-
-   
-    
-
-
-
-    
-   
-
- 
-    
-
-
-
-    
-    {/* <Footer1/> */}
-
-
-
-
-
-
-
-
-
-
-    
-  
     </>
   
   );

@@ -40,13 +40,19 @@ let ProductDetails=({product}) =>{
 <div className="item-image-parent" >
     <div className="item-list-vertical">
         <div className="thumb-box">
-            <img src={product.image} alt="thumbnail"  />
+            <img src={product.image && product.image.startsWith('http') 
+    ? product.image 
+    : `http://localhost:7777/uploads/${product.image}`
+  } alt="thumbnail"  />
         </div>
        
 
     </div>
     <div className="item-image-main" >
-        <img src={product.image} alt="default" style={{height:450}} />
+        <img src={product.image && product.image.startsWith('http') 
+    ? product.image 
+    : `http://localhost:7777/uploads/${product.image}`
+  } alt="default" style={{height:450}} />
     </div>
    
 </div>
@@ -69,10 +75,16 @@ let ProductDetails=({product}) =>{
         <div className="change-color">
             <label><b>Colour:</b> Black</label><br/>
             <div className="thumb-box">
-                <img src={product.image} alt="thumbnail" />
+                <img src={product.image && product.image.startsWith('http') 
+    ? product.image 
+    : `http://localhost:7777/uploads/${product.image}`
+  } alt="thumbnail" />
             </div>
             <div className="thumb-box">
-                <img src={product.image} alt="thumbnail" />
+                <img src={product.image && product.image.startsWith('http') 
+    ? product.image 
+    : `http://localhost:7777/uploads/${product.image}`
+  } alt="thumbnail" />
             </div>
         </div>
         
